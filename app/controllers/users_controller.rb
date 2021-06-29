@@ -13,4 +13,10 @@ class UsersController < ApplicationController
     response_text = input == nil ? "Input can't be empty!! " : "Hey, your account is created with id #{input.id}"
     render plain: response_text
   end
+
+  def login
+    user = User.find_by("email = ?  and password = ?", params[:email], params[:password])
+    output = user ? "Welcome #{user.name}" : "The e-mail address and/or password you specified are not correct."
+    render plain: output
+  end
 end
