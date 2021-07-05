@@ -6,33 +6,19 @@
    <ul>
       <% todos.each do |todo| %>
          <li class="TodoItem">
-            <% if section_title == "Overdue" %>
-               <% if todo.completed %>
-               <% else %>
-                  <label class="TodoItem-container">
-                  <input class="TodoItem-checkbox" type="checkbox"  >
-                  <span class="TodoItem-todoText" >
-                     <%= todo.todo_text %>
-                  </span>
-                  <p class="TodoItem-dueDate">
-                     <%= todo.due_date.to_s(:short) %>
-                  </p>
-                  <input type="image" src="https://img.icons8.com/small/16/000000/trash--v1.png" class="TodoItem-delete">
-               <% end %>
+            <label class="TodoItem-container">
+            <% if todo.completed %>
+               <input class="TodoItem-checkbox" type="checkbox" checked >
+               <span class="TodoItem-todoText" style="text-decoration: line-through">
+                  <%= todo.todo_text %>
+               </span>
             <% else %>
-               <label class="TodoItem-container">
-               <% if todo.completed %>
-                  <input class="TodoItem-checkbox" type="checkbox" checked >
-                  <span class="TodoItem-todoText" style="text-decoration: line-through">
+               <input class="TodoItem-checkbox" type="checkbox">
+                  <span class="TodoItem-todoText">
                      <%= todo.todo_text %>
                   </span>
-               <% else %>
-                  <input class="TodoItem-checkbox" type="checkbox">
-                     <span class="TodoItem-todoText">
-                        <%= todo.todo_text %>
-                     </span>
-               <% end %>
-               <% if show_due_date %>
+            <% end %>
+            <% if show_due_date %>
                   <p class="TodoItem-dueDate">
                      <%= todo.due_date.to_s(:short) %>
                   </p>
@@ -40,6 +26,5 @@
                <input type="image" src="https://img.icons8.com/small/16/000000/trash--v1.png" class="TodoItem-delete">
             <% end %>
          </li>
-      <% end %>
    </ul>
 </section>
