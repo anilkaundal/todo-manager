@@ -137,6 +137,10 @@ body {
   margin-left: 8px;
 }
 
+.TodoItem-completedText {
+  text-decoration: line-through;
+}
+
 .TodoItem-delete {
   width: 16px;
   visibility: hidden;
