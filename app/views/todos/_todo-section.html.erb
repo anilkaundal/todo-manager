@@ -17,9 +17,9 @@
                <%= todo.todo_text %>
             </span>
             <% if show_due_date %>
-               <p class="TodoItem-dueDate">
-                  <%= todo.due_date.to_s(:short) %>
-               </p>
+               <%= content_tag(:p,
+                               todo.due_date.to_s(:short),
+                               class: "TodoItem-dueDate") %>
             <% end %>
             <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
                <input type="image"
