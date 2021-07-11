@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       session[:current_user_id] = user.id
       redirect_to "/"
     else
-      redirect_to "/"
+      flash[:error] = "The e-mail address and/or password you specified are not correct."
+      redirect_to new_sessions_path
     end
   end
 
