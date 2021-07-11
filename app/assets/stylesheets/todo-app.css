@@ -13,10 +13,14 @@ body {
 .TodoPage-title {
   font-size: 20px;
   color: #453c52;
-  margin-top: 60px;
+  margin-top: 25px;
   margin-bottom: 12px;
   font-weight: 600;
   line-height: 1.6;
+  height: 32px;
+  align-items: stretch;
+  margin-bottom: 24px;
+  justify-content: space-between;
 }
 
 .AddTodo {
